@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AIRON — Indie-folk from Cardigan, Wales</title>
+  <meta name="description" content="Airon is a singer-songwriter from Cardigan (Aberteifi), Wales. Raw, cinematic indie-folk. Listen and stream 'Munkee', 'Nos Da, Cariad' and more on Spotify, Apple Music and SoundCloud." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="music.musician" />
+  <meta property="og:title" content="AIRON — Indie-folk from Cardigan, Wales" />
+  <meta property="og:description" content="Raw, cinematic indie-folk from the edge of Wales. Stream now." />
+  <meta name="theme-color" content="#080b0c" />
+
+  <!-- Favicon: simple wave/A mark -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23080b0c'/%3E%3Cpath d='M6 20c3-8 5-8 8 0s5 8 8 0' stroke='%235fb3a3' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" />
+
+  <!-- Fonts are self-hosted via @font-face in css/style.css -->
+  <link rel="preload" href="assets/fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- ============ PRELOADER ============ -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <div class="preloader__word" data-preload-word>
+        <span>A</span><span>I</span><span>R</span><span>O</span><span>N</span>
+      </div>
+      <div class="preloader__bar"><span id="preloadBar"></span></div>
+      <div class="preloader__meta">
+        <span>Cardigan · Aberteifi</span>
+        <span id="preloadPct">00</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ ATMOSPHERIC CANVAS ============ -->
+  <canvas id="fx" class="fx" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <!-- ============ CUSTOM CURSOR ============ -->
+  <div class="cursor" id="cursor" aria-hidden="true"><span></span></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__brand" data-cursor="hover">
+      <span class="nav__mark" aria-hidden="true"></span>
+      AIRON
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#release" data-cursor="hover">Latest</a>
+      <a href="#music" data-cursor="hover">Music</a>
+      <a href="#story" data-cursor="hover">Story</a>
+      <a href="#listen" data-cursor="hover">Listen</a>
+    </nav>
+    <a href="#listen" class="nav__cta" data-cursor="hover">
+      <span class="nav__cta-dot" aria-hidden="true"></span> Stream
+    </a>
+  </header>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero__eyebrow" data-reveal>
+        <span class="line" aria-hidden="true"></span>
+        Singer-songwriter · Cardigan, Wales
+      </div>
+
+      <h1 class="hero__title" aria-label="Airon">
+        <span class="hero__letter" data-hero-letter>A</span>
+        <span class="hero__letter" data-hero-letter>I</span>
+        <span class="hero__letter" data-hero-letter>R</span>
+        <span class="hero__letter" data-hero-letter>O</span>
+        <span class="hero__letter" data-hero-letter>N</span>
+      </h1>
+
+      <p class="hero__sub" data-reveal>
+        Raw, cinematic indie-folk written on the edge of Wales — where the
+        River Teifi meets the sea. Quiet songs with the volume turned all the way up.
+      </p>
+
+      <div class="hero__actions" data-reveal>
+        <a href="#release" class="btn btn--solid" data-cursor="hover">
+          <span class="btn__ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+          Listen now
+        </a>
+        <a href="#music" class="btn btn--ghost" data-cursor="hover">Explore the songs</a>
+      </div>
+
+      <!-- floating stat chips -->
+      <div class="hero__meta" data-reveal>
+        <span>11 singles</span><span class="dot"></span>
+        <span>Featured on BBC Introducing Cymru</span><span class="dot"></span>
+        <span>New: “Munkee”</span>
+      </div>
+
+      <a class="hero__scroll" href="#release" data-cursor="hover" aria-label="Scroll to latest release">
+        <span>Scroll</span>
+        <span class="hero__scroll-line" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track" data-marquee>
+        <span>Nos Da, Cariad</span><i>✦</i>
+        <span>Munkee</span><i>✦</i>
+        <span>A Beautiful Wreck</span><i>✦</i>
+        <span>Not Yours to Carry</span><i>✦</i>
+        <span>The Cruelest Kid I Know</span><i>✦</i>
+        <span>Outline Of Me</span><i>✦</i>
+        <span>Footbridge</span><i>✦</i>
+      </div>
+      <div class="marquee__track" data-marquee>
+        <span>Nos Da, Cariad</span><i>✦</i>
+        <span>Munkee</span><i>✦</i>
+        <span>A Beautiful Wreck</span><i>✦</i>
+        <span>Not Yours to Carry</span><i>✦</i>
+        <span>The Cruelest Kid I Know</span><i>✦</i>
+        <span>Outline Of Me</span><i>✦</i>
+        <span>Footbridge</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ============ LATEST RELEASE ============ -->
+    <section class="release" id="release">
+      <div class="section-head" data-reveal>
+        <span class="section-head__idx">01</span>
+        <span class="section-head__label">Latest release</span>
+      </div>
+
+      <div class="release__grid">
+        <!-- Artwork / player -->
+        <div class="release__art" data-reveal data-parallax="0.12">
+          <div class="cover cover--munkee" data-cursor="play" id="featuredCover">
+            <div class="cover__glow" aria-hidden="true"></div>
+            <div class="cover__title">
+              <span>AIRON</span>
+              <strong>Munkee</strong>
+            </div>
+            <button class="cover__play" id="playToggle" aria-pressed="false" aria-label="Play preview">
+              <svg class="ico-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              <svg class="ico-pause" viewBox="0 0 24 24"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+            </button>
+            <canvas class="cover__wave" id="coverWave" aria-hidden="true"></canvas>
+          </div>
+        </div>
+
+        <!-- Details -->
+        <div class="release__body">
+          <p class="release__tag" data-reveal>Out now · Single</p>
+          <h2 class="release__title" data-reveal-lines>Munkee</h2>
+          <p class="release__desc" data-reveal>
+            The newest single — brittle guitars, a hook that won't let go, and the
+            kind of chorus that sounds like a memory you didn't know you had.
+            Latest of eleven singles released this year.
+          </p>
+
+          <div class="release__links" data-reveal>
+            <!-- TODO(airon): replace search links with canonical release URLs -->
+            <a class="plink plink--spotify" href="https://open.spotify.com/search/Airon%20Munkee" target="_blank" rel="noopener" data-cursor="hover">
+              <span class="plink__ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm4.6 14.4a.62.62 0 01-.86.21c-2.35-1.44-5.3-1.76-8.79-.96a.63.63 0 11-.28-1.22c3.8-.87 7.08-.5 9.72 1.11.3.18.39.57.21.86zm1.23-2.75a.78.78 0 01-1.07.26c-2.69-1.65-6.79-2.13-9.97-1.16a.78.78 0 11-.45-1.49c3.63-1.1 8.15-.57 11.23 1.32.37.22.49.7.26 1.07zm.11-2.86C14.83 8.92 9.6 8.74 6.6 9.65a.94.94 0 11-.54-1.8c3.44-1.04 9.22-.84 12.86 1.32a.94.94 0 11-.96 1.62z"/></svg>
+              </span>
+              <span>Spotify</span>
+            </a>
+            <a class="plink plink--apple" href="https://music.apple.com/search?term=Airon%20Munkee" target="_blank" rel="noopener" data-cursor="hover">
+              <span class="plink__ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M16.4 12.9c0-2 1.6-3 1.7-3.1-1-1.4-2.4-1.6-2.9-1.6-1.3-.1-2.4.7-3 .7s-1.6-.7-2.6-.7c-1.3 0-2.6.8-3.2 2-1.4 2.4-.4 6 1 8 .6 1 1.4 2 2.4 2s1.3-.6 2.5-.6 1.5.6 2.6.6 1.7-.9 2.3-1.9c.7-1.1 1-2.1 1-2.2-.1 0-2-.8-2-3.2zM14.5 6.1c.5-.7.9-1.6.8-2.6-.8 0-1.8.6-2.4 1.2-.5.6-1 1.5-.8 2.4.9.1 1.8-.4 2.4-1z"/></svg>
+              </span>
+              <span>Apple Music</span>
+            </a>
+            <a class="plink plink--soundcloud" href="https://soundcloud.com/search?q=Airon%20Munkee" target="_blank" rel="noopener" data-cursor="hover">
+              <span class="plink__ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M3 15v3h1v-3zm2-1v4h1v-4zm2-1v5h1v-5zm2-1v6h1v-6zm2-1.5V19h1v-8zm2 1V19h9a2.5 2.5 0 000-5c-.2 0-.5 0-.7.1A5 5 0 0013 11z"/></svg>
+              </span>
+              <span>SoundCloud</span>
+            </a>
+          </div>
+
+          <!--
+            To embed the real Spotify player, drop the artist/track embed here, e.g.:
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/TRACK_ID?utm_source=generator" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MUSIC / DISCOGRAPHY ============ -->
+    <section class="music" id="music">
+      <div class="section-head" data-reveal>
+        <span class="section-head__idx">02</span>
+        <span class="section-head__label">The songs</span>
+      </div>
+      <h2 class="music__headline" data-reveal-lines>Eleven singles. One long, honest year.</h2>
+
+      <ul class="tracklist" id="tracklist">
+        <!-- rows injected/enhanced by JS; static fallback below -->
+        <li class="track" data-track data-hue="168" style="--hue:168">
+          <span class="track__num">01</span>
+          <span class="track__name">Munkee</span>
+          <span class="track__tag">Latest single</span>
+          <span class="track__wave" aria-hidden="true"></span>
+          <a class="track__cta" href="https://open.spotify.com/search/Airon%20Munkee" target="_blank" rel="noopener" data-cursor="hover">Stream</a>
+        </li>
+        <li class="track" data-track data-hue="192" style="--hue:192">
+          <span class="track__num">02</span>
+          <span class="track__name">Nos Da, Cariad</span>
+          <span class="track__tag">Welsh · BBC Introducing pick</span>
+          <span class="track__wave" aria-hidden="true"></span>
+          <a class="track__cta" href="https://open.spotify.com/search/Airon%20Nos%20Da%20Cariad" target="_blank" rel="noopener" data-cursor="hover">Stream</a>
+        </li>
+        <li class="track" data-track data-hue="28" style="--hue:28">
+          <span class="track__num">03</span>
+          <span class="track__name">A Beautiful Wreck</span>
+          <span class="track__tag">Single</span>
+          <span class="track__wave" aria-hidden="true"></span>
+          <a class="track__cta" href="https://open.spotify.com/search/Airon%20A%20Beautiful%20Wreck" target="_blank" rel="noopener" data-cursor="hover">Stream</a>
+        </li>
+        <li class="track" data-track data-hue="150" style="--hue:150">
+          <span class="track__num">04</span>
+          <span class="track__name">I Didn't Know</span>
+          <span class="track__tag">Single</span>
+          <span class="track__wave" aria-hidden="true"></span>
+          <a class="track__cta" href="https://open.spotify.com/search/Airon%20I%20Didnt%20Know" target="_blank" rel="noopener" data-cursor="hover">Stream</a>
+        </li>
+        <li class="track" data-track data-hue="204" style="--hue:204">
+          <span class="track__num">05</span>
+          <span class="track__name">Footbridge</span>
+          <span class="track__tag">Single</span>
+          <span class="track__wave" aria-hidden="true"></span>
+          <a class="track__cta" href="https://open.spotify.com/search/Airon%20Footbridge" target="_blank" rel="noopener" data-cursor="hover">Stream</a>
+        </li>
+        <li class="track" data-track data-hue="14" style="--hue:14">
+          <span class="track__num">06</span>
+          <span class="track__name">Not Yours to Carry</span>
+          <span class="track__tag">Most-streamed</span>
+          <span class="track__wave" aria-hidden="true"></span>
+          <a class="track__cta" href="https://open.spotify.com/search/Airon%20Not%20Yours%20to%20Carry" target="_blank" rel="noopener" data-cursor="hover">Stream</a>
+        </li>
+        <li class="track" data-track data-hue="178" style="--hue:178">
+          <span class="track__num">07</span>
+          <span class="track__name">Outline Of Me</span>
+          <span class="track__tag">Single</span>
+          <span class="track__wave" aria-hidden="true"></span>
+          <a class="track__cta" href="https://open.spotify.com/search/Airon%20Outline%20Of%20Me" target="_blank" rel="noopener" data-cursor="hover">Stream</a>
+        </li>
+        <li class="track" data-track data-hue="40" style="--hue:40">
+          <span class="track__num">08</span>
+          <span class="track__name">The Boy Watches</span>
+          <span class="track__tag">Single</span>
+          <span class="track__wave" aria-hidden="true"></span>
+          <a class="track__cta" href="https://open.spotify.com/search/Airon%20The%20Boy%20Watches" target="_blank" rel="noopener" data-cursor="hover">Stream</a>
+        </li>
+        <li class="track" data-track data-hue="186" style="--hue:186">
+          <span class="track__num">09</span>
+          <span class="track__name">Guest in Every Room</span>
+          <span class="track__tag">Single</span>
+          <span class="track__wave" aria-hidden="true"></span>
+          <a class="track__cta" href="https://open.spotify.com/search/Airon%20Guest%20in%20Every%20Room" target="_blank" rel="noopener" data-cursor="hover">Stream</a>
+        </li>
+        <li class="track" data-track data-hue="8" style="--hue:8">
+          <span class="track__num">10</span>
+          <span class="track__name">The Cruelest Kid I Know</span>
+          <span class="track__tag">Single</span>
+          <span class="track__wave" aria-hidden="true"></span>
+          <a class="track__cta" href="https://open.spotify.com/search/Airon%20The%20Cruelest%20Kid%20I%20Know" target="_blank" rel="noopener" data-cursor="hover">Stream</a>
+        </li>
+        <li class="track" data-track data-hue="160" style="--hue:160">
+          <span class="track__num">11</span>
+          <span class="track__name">Mainstream</span>
+          <span class="track__tag">Single</span>
+          <span class="track__wave" aria-hidden="true"></span>
+          <a class="track__cta" href="https://open.spotify.com/search/Airon%20Mainstream" target="_blank" rel="noopener" data-cursor="hover">Stream</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ STORY ============ -->
+    <section class="story" id="story">
+      <div class="story__bg" aria-hidden="true" data-parallax="0.18"></div>
+      <div class="section-head" data-reveal>
+        <span class="section-head__idx">03</span>
+        <span class="section-head__label">The story</span>
+      </div>
+
+      <div class="story__grid">
+        <div class="story__lead">
+          <h2 data-reveal-lines>
+            Written where the land runs out and the water begins.
+          </h2>
+        </div>
+        <div class="story__col">
+          <p data-reveal>
+            Airon is Aaron Grieve — a songwriter from <strong>Cardigan</strong>
+            (<em>Aberteifi</em>) on the west coast of Wales. The songs come from
+            the same place the weather does: the estuary, the harbour, the long
+            grey light of a Teifi morning.
+          </p>
+          <p data-reveal>
+            Over one prolific year he's put out eleven singles, from the
+            Welsh-language <strong>“Nos Da, Cariad”</strong> — picked up by
+            <strong>BBC Introducing in Wales</strong> — to the brand-new
+            <strong>“Munkee.”</strong> No band, no polish for polish's sake.
+            Just voice, guitar, and whatever the room was feeling that night.
+          </p>
+          <div class="story__quote" data-reveal>
+            <span class="story__welsh">“Nos da, cariad.”</span>
+            <span class="story__gloss">— goodnight, love</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="story__stats" data-reveal>
+        <div class="stat"><strong data-count="11">11</strong><span>singles this year</span></div>
+        <div class="stat"><strong>BBC</strong><span>Introducing Cymru</span></div>
+        <div class="stat"><strong>Cymru</strong><span>Cardigan · Aberteifi</span></div>
+        <div class="stat"><strong>∞</strong><span>replays, hopefully</span></div>
+      </div>
+    </section>
+
+    <!-- ============ LISTEN / STREAM CTA ============ -->
+    <section class="listen" id="listen">
+      <div class="listen__inner">
+        <p class="listen__eyebrow" data-reveal>Press play</p>
+        <h2 class="listen__title" data-reveal-lines>
+          Put it on. <span>Turn it up.</span>
+        </h2>
+        <p class="listen__sub" data-reveal>
+          Every stream, save and share helps these songs travel further than
+          the harbour wall. Choose your platform.
+        </p>
+
+        <div class="platforms" data-reveal>
+          <!-- TODO(airon): swap search URLs for the canonical artist profiles -->
+          <a class="platform platform--spotify" href="https://open.spotify.com/search/Airon" target="_blank" rel="noopener" data-cursor="hover">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm4.6 14.4a.62.62 0 01-.86.21c-2.35-1.44-5.3-1.76-8.79-.96a.63.63 0 11-.28-1.22c3.8-.87 7.08-.5 9.72 1.11.3.18.39.57.21.86zm1.23-2.75a.78.78 0 01-1.07.26c-2.69-1.65-6.79-2.13-9.97-1.16a.78.78 0 11-.45-1.49c3.63-1.1 8.15-.57 11.23 1.32.37.22.49.7.26 1.07zm.11-2.86C14.83 8.92 9.6 8.74 6.6 9.65a.94.94 0 11-.54-1.8c3.44-1.04 9.22-.84 12.86 1.32a.94.94 0 11-.96 1.62z"/></svg>
+            <span>Spotify</span>
+            <em aria-hidden="true">↗</em>
+          </a>
+          <a class="platform platform--apple" href="https://music.apple.com/search?term=Airon" target="_blank" rel="noopener" data-cursor="hover">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.9c0-2 1.6-3 1.7-3.1-1-1.4-2.4-1.6-2.9-1.6-1.3-.1-2.4.7-3 .7s-1.6-.7-2.6-.7c-1.3 0-2.6.8-3.2 2-1.4 2.4-.4 6 1 8 .6 1 1.4 2 2.4 2s1.3-.6 2.5-.6 1.5.6 2.6.6 1.7-.9 2.3-1.9c.7-1.1 1-2.1 1-2.2-.1 0-2-.8-2-3.2zM14.5 6.1c.5-.7.9-1.6.8-2.6-.8 0-1.8.6-2.4 1.2-.5.6-1 1.5-.8 2.4.9.1 1.8-.4 2.4-1z"/></svg>
+            <span>Apple Music</span>
+            <em aria-hidden="true">↗</em>
+          </a>
+          <a class="platform platform--soundcloud" href="https://soundcloud.com/search?q=Airon" target="_blank" rel="noopener" data-cursor="hover">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 15v3h1v-3zm2-1v4h1v-4zm2-1v5h1v-5zm2-1v6h1v-6zm2-1.5V19h1v-8zm2 1V19h9a2.5 2.5 0 000-5c-.2 0-.5 0-.7.1A5 5 0 0013 11z"/></svg>
+            <span>SoundCloud</span>
+            <em aria-hidden="true">↗</em>
+          </a>
+          <a class="platform platform--yt" href="https://music.youtube.com/search?q=Airon" target="_blank" rel="noopener" data-cursor="hover">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-2 14V8l7 4z"/></svg>
+            <span>YouTube Music</span>
+            <em aria-hidden="true">↗</em>
+          </a>
+          <a class="platform platform--bbc" href="https://www.bbc.co.uk/music/introducing" target="_blank" rel="noopener" data-cursor="hover">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v10H4z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 9.5h1.6a1.4 1.4 0 010 2.8H8zm0 2.8h1.8a1.4 1.4 0 010 2.7H8z" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+            <span>BBC Introducing</span>
+            <em aria-hidden="true">↗</em>
+          </a>
+          <a class="platform platform--bandlab" href="https://www.bandlab.com/search?q=Airon" target="_blank" rel="noopener" data-cursor="hover">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v10M9 9v6M15 9v6" stroke="currentColor" stroke-width="1.6"/></svg>
+            <span>BandLab</span>
+            <em aria-hidden="true">↗</em>
+          </a>
+        </div>
+
+        <!-- Newsletter -->
+        <form class="signup" id="signup" novalidate>
+          <label class="signup__label" for="email">Get the next single first</label>
+          <div class="signup__row">
+            <input class="signup__input" id="email" type="email" name="email" placeholder="you@email.com" autocomplete="email" data-cursor="hover" />
+            <button class="signup__btn" type="submit" data-cursor="hover">Notify me</button>
+          </div>
+          <p class="signup__note" id="signupNote" aria-live="polite">No spam. Just new songs, straight from Cardigan.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer__big" aria-hidden="true" data-marquee-foot>AIRON — AIRON — AIRON — AIRON —&nbsp;</div>
+    <div class="footer__row">
+      <span>© <span id="year">2026</span> Airon · Cardigan, Cymru</span>
+      <span class="footer__mid">Made with sea air &amp; reverb</span>
+      <a href="mailto:aaron@airon.music" data-cursor="hover">aaron@airon.music</a>
+    </div>
+  </footer>
+
+  <!-- GSAP + ScrollTrigger (self-hosted) -->
+  <script src="js/gsap.min.js"></script>
+  <script src="js/ScrollTrigger.min.js"></script>
+  <!-- Lenis smooth scroll (self-hosted) -->
+  <script src="js/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
