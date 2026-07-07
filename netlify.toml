@@ -1,0 +1,18 @@
+# Netlify configuration for the AIRON artist website.
+# The site is a static build living in the `site/` subdirectory.
+
+[build]
+  publish = "site"
+  # No build step — it's plain static HTML/CSS/JS.
+  command = ""
+
+# Long-cache the vendored, fingerprint-stable assets (fonts + libraries).
+[[headers]]
+  for = "/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*.min.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
